@@ -1,0 +1,21 @@
+Version 1.9.1.7 of [url=https://lotrointerface.com/downloads/info1104-MinstrelBuffswithOut-Of-CombatTimer.html]MinstrelBuffs with Out-Of-Combat Timer[/url] is now available at lotrointerface.com.
+
+This release includes several larger changes:
+
+A new window for Melodic Interlude, a red-line effect that unlocks friendly healing for Dissonance-stance minstrels. This window includes a 10 second countdown timer and the two healing skills that are usable on friendly targets;
+
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffs/MinstrelBuffs_with_Combat_Timer_v1.9.1.7-Melodic%20Interlude.png[/IMG]
+
+A new War-Speech UI for tracking how many War-Speech effects (+5% tactical damage) you have and how long until they expire:
+
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffs/MinstrelBuffs_with_Combat_Timer_v1.9.1.7-War-Speech.png[/IMG]
+
+The default 'Window - Standard' theme now supports up to six simultaneous anthems by growing as needed:
+
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffs/MinstrelBuffs_with_Combat_Timer_v1.9.1.7-WindowStandardExtraAnthems.png[/IMG]
+
+The release also includes smaller bug fixes and improvements.
+
+More detailed information is available at [URL="https://www.lotrointerface.com/downloads/info1139-DeedTracker.html"]lotrointerface[/URL].
+
+(At this point most of the files have been modified and developer Melida seems to be inactive, so it might be time to roll everything together into a MinstrelBuffsII?)

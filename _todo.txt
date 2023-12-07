@@ -1,0 +1,137 @@
+
+---------------------
+Things to do before shipping the Priority Anthem feature as MinstrelBuff II v2.0.3:
+---------------------
+    Update the background to include a space for the anthem
+---------------------
+
+Snowball (blue tree) - track how many of the 7 heals have been done before Perfect Ending is unlocked.
+
+Consider using skill & effect image ids instead of names to identify them.
+    This would conflate the personal and fellowship effects, but they always have (approximately) the same duration.
+
+Borrow idea of a tip window from Combat Analysis?
+Take screenshots of new Anthems. Update Wiki?
+
+BuffWindow's .window property should be done away with.
+    Instead, use self.
+
+Don't toss away information about ballads / anthems / etc. when changing the background image.
+
+Now that the UI cares about the size of the screen,
+    use the technique for detecting that the screen resolution has changed?
+
+BuffWindow.nextAnthemEffectPlace is incredibly confusing to maintain code around.
+    How about BuffWindow.activeAnthemCount?
+    On the other hand, if this is going to be blown away by the upcoming minstrel changes,
+        then maybe don't worry about it.
+
+Main Window and Melodic Interlude:
+    When scaling bar is changed, make window visible for a few seconds.
+
+Melodic Interlude shortcuts:
+    Is there Improved Raise the Spirit or Chord of Salvation? Do those use different hex codes?
+        Needs testing on high-level minstrel before releasing patch.
+
+Once an anthem or ballad, etc. is detected, use a Plugin specific value, like ANTHEM_I_COMPASSION = 723;
+    Then we can do overlay lookups based on just this internal value, not needing to add it to the strings files.
+---
+
+Minstrel 3.0 thoughts:
+
+Get rid of "not shortestRemainingTimeSet", use "shortestRemainingTime == 0"
+
+Is the text over the effect still working?
+    No! L, P, L+P is not working! - But I saw it working, so what's up?
+
+Show UI all the time! (Maybe optionally when anthem cooldown expires, starting with visible?)
+Other anthem changes:
+    Change anthem timers to yellow when they get close to timing out
+
+Add option to include personal anthem effects (on non-fixed display?). "P" overlay.
+
+Emboldening Finish UI showing the stack from 1 to 5 (+5% to +25%)
+UI for Anthem bonuses from Invigorating Anthems?
+Internal 25 second cooldown on Improved Coda of Fury effect.
+UI for "The 'Improved Inspire Fellows' trait will now cause Inspire Fellows 
+    to tier up Inner Strength on your fellows, when the 'Inner Strength'
+    trait is also active."?
+
+Themes files: Can we change e.g. "ThemePath5" to "local ThemePath" instead?
+
+On load, OptionWindow:PlaceControls is called twice...
+    Called in ctor *AND* in semi-static but dependent-on-ctor function GetOptionControl.
+    This may have been in order to support both window *and* in-options-panel display.
+
+Instead of saving after every Up/Down click in Anthem Priority Options,
+    start a 10? second timer that restarts after each up/down,
+    on timer expiration, Save();
+    Thought: Do this in settings:Save() itself, instead of for each option that wants it.
+        When the plugin unloads, check for an uncompleted timer.
+
+Change Theme list to a dropdown to save space? - Farothhen
+
+Change variable names like Anthem1LesserResonance to include "Effect" like Anthem1LesserResonanceEffect
+    In general name variables with effect or skill when talking about Anthems
+
+Should the priority queue combine lesser & greater into a single row using the effect icon?
+    Lesser only takes 1 ballad, greater takes 2, and lesser resonance / dissonance gives personal effect.
+
+---
+
+Misc:
+
+Detection of which graphic to use for Third Age is based on stance, not trait tree
+    Whenever stance changes, it might be because trait tree changed.
+    Check for which anthem of the third age is trained.
+    Fixed anthems assume only one Anthem of the Third Age can be active. This is not true.
+        Interesting problem to solve (for me): Make "fixed" customizable: Pick which of the 8 anthems, in which order to display.
+    ThemeNote - different images for Ballad and Anthem not handled with current multi-anthem support.
+    ThemeNoWindowFourAnthems - Fix name? (It's only 3 anthems)
+
+War-Speech Improvements:
+    If there are three War-speeches, then color the timer in place #1 differently with < 2 seconds left.
+    If a War-speech timer is active then visibility = true (for only-combat mode)
+
+Soliloquy of Spirit window and main window show during hidden-hud when repostion is enabled.
+(Other game windows do not.)
+
+----
+
+Look at Lua lib like ImgGui.
+
+
+
+
+---
+
+
+To-do items:
+Beginning of stream 2022-04-12, collectgarbage("count"); returned values betwen 1215 and 1235.
+
+
+Look through effect code, see what changes we could make for perfermance purposes. (Maybe don't sort all effects by time?)
+Optimization thoughts:
+
+Instead of copying every effect,
+    have list of indicies that get sorted?
+    have list of indicies that we care about?
+        Don't copy and then sort a bunch of effects that aren't relevant
+
+euroNormalize content in SettingsEncoder.lua is missing from lotrointreface released version.
+
+French codas seem wrong. How are codas supposed to be used, and is that happening in French?
+    Step 1: How do I get my improved codas?
+    Step 2: What does that look like in the effect list?
+    Step 3: Repeat on French client.
+
+Sort out which Anthems are no longer valid, remove all traces of them!
+
+---
+
+Dynamically expand 'Window - Standard' if there are more than 3 anthems to display.
+Change display of Anthem if player does not have it trained. (They can't be the one to rebuff it.)
+    Ignore the edge case where an Anthem you're trained in is from someone else, and theirs is more powerful.
+
+minstrel_buffbar_background:
+Can we cut it into pieces and make it bigger that way?

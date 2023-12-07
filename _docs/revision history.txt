@@ -1,0 +1,14 @@
+2020-12-01 Version 1.9.1.1: Initial release
+2020-12-07 Version 1.9.1.2: 
+    [SIZE=3]Version 1.1.9.2 release notes:[/SIZE]
+    New Features:
+    [LIST]
+    [*] Combat bar changes color from white to yellow when there is less than 5 seconds left before it expires.
+    [*] Added a Secondary Combat timer. This is shown as red filling up the combat bar. Staying in combat long enough for the red to fill the remaining combat bar completely means you have refreshed your combat timer. Note: To refresh the combat timer, you have to stay in a secondary combat for 5 seconds (or the amount left on your combat timer if it's less than 5 seconds).
+    [/LIST]
+    Bug Fixes:
+    [LIST]
+    [*] Entering combat with a Cry of the Chorus countdown active was being treated like starting a primary combat (incorrect) instead of a secondary combat (correct). This was causing ballads to expire unexpectedly (from the plugin's point of view) because the first combat after Cry of the Chorus was not long enough, and has been fixed.
+    [*] Exiting a secondary combat just after refreshing the combat timer could result in the plugin thinking the combat timer should refresh, but the server thinking the ballads should expire. Plugin now stops combat timer if ballad expires, even if it thinks the secondary combat was long enough.
+    [*] MinstrelBuffs window will now show if the combat timer is active even if no ballads or anthems are active.
+    [/LIST]

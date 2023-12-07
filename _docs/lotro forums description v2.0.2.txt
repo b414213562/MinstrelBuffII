@@ -1,0 +1,14 @@
+The initial release (version 2.0.2) of [url=https://lotrointerface.com/downloads/info1201-MinstrelBuffII.html]MinstrelBuff II[/url] is now available at lotrointerface.com.
+
+This release focused on combining my long-running patch "MinstrelBuffs with Out-Of-Combat Timer" with support for the 2022 Minstrel update into a stand-alone plugin.
+
+Specifically, the English, French, and German anthem and ballad effects have been updated.
+Additionally, an overlay has been added to show if an anthem is Lesser (L), Greater (G), or both (L+G).
+[IMG]https://www.lotrointerface.com/downloads/full3612.jpg[/IMG]
+
+The fixed theme background images have been updated with the new anthem icons.
+[IMG]https://www.lotrointerface.com/downloads/full3613.jpg[/IMG]
+
+Also, the main window can be scaled from 50% to 10x the default size.
+
+More information is available at [URL="https://lotrointerface.com/downloads/info1201-MinstrelBuffII.html"]lotrointerface[/URL].

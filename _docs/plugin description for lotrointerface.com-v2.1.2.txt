@@ -1,0 +1,104 @@
+[SIZE="4"][COLOR="DeepSkyBlue"]Introduction[/COLOR][/SIZE]
+
+This is a plugin for Minstrels. It is based on [URL="https://www.lotrointerface.com/downloads/info626-MinstrelBuff.html"]MinstrelBuff[/URL], by Melida, and adds numerous features including support for the 2022 Minstrel updates.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Ballads and Anthems[/COLOR][/SIZE]
+
+The main window shows which ballads and anthems you have active.
+Lesser and Greater anthems have an overlay (L or G) indicating which they are. (This overlay can be turned off in the options.)
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Anthem Priority[/COLOR][/SIZE]
+
+The options screen now allows you to configure your preference for Anthems:
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffsII_v2.1.0-Priority_Anthem_Config.png[/IMG]
+
+If this feature is enabled, you will see the next anthem in your priority list shown next to the main window:
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffsII_v2.1.0-Priority_Anthem_Display.png[/IMG]
+
+The goal of the Anthem Priority feature is to keep your most important anthems active. If you have to choose between keeping a more important anthem active or activating a different active, the plugin chooses the more important anthem.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Ballad Expiration[/COLOR][/SIZE]
+
+All ballad descriptions include the text "Expires if out of combat for 9 seconds". However, this is an incomplete summary of when ballads do and do not expire. For example: Cry of the Chorus gives you three ballad buffs even if you have been out of combat for 9 seconds.
+
+As of December 2020, the game logic works like this:
+
+[LIST]
+[*]Let's call entering combat after being out of combat for more than nine seconds a "primary combat". When you leave a primary combat, a nine second timer starts counting down. When the timer expires, your ballad buffs also expire. 
+[*]Let's call entering combat while the timer is counting down a "secondary combat". You must stay in a secondary combat for five seconds before it resets the combat timer. That is, if it takes you less than five seconds to enter and leave combat, the original timer continues counting down as if you had not entered combat.
+[*]There's a big exception to this, however: If you are in combat when the current timer expires, it refreshes the timer even if the combat ends in less than five seconds.
+[*]Cry of the Chorus and Major Ballad (Resonance Stance) start the nine second timer if: the player is not already in combat, there is not already a out-of-combat countdown happening, there is not already a Major Ballad countdown happening, and there is not already a Cry of the Chorus countdown happening.
+[*] Entering combat with a Cry of the Chorus countdown or a Major Ballad (Resonance Stance) countdown active is treated like starting a secondary combat, so you must then stay in combat for 5 seconds to refresh the timer.
+[/LIST]
+
+This plugin has two timers:
+[LIST]
+[*] a timer that shows when your ballads buffs will expire. This combat timer starts off white, and when less than five seconds remain it turns yellow. 
+[*] a red timer that shows how long you need to remain in a secondary combat before the combat timer is reset. This happens when the red timer fills up the remaining combat timer completely.
+[/LIST]
+
+The white bar at bottom shows I've got the full 9 seconds left.
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Out_of_combat_timer_1.png[/IMG]
+I've been out of combat for around 6 seconds, so the bar is yellow.
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Out_of_combat_timer_2.png[/IMG]
+Whoops! Took too long to get back into combat, so my ballads expired.
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Out_of_combat_timer_3.png[/IMG]
+I'm in a secondary combat. If the red bar fills up the white bar, the combat timer will reset.
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Out_of_combat_timer_4.png[/IMG]
+
+This plugin does its best to mimic the game logic, however it can occasionally incorrectly predict when the ballads will expire. If you have steps to reproduce an incorrect timer, please comment below and I'll see if I can update the plugin to match!
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Soliloquy of Spirit / Inner Strength Tracker[/COLOR][/SIZE]
+
+You can enable the Soliloquy Tracker in Options. Once enabled, this will pop up a window whenever you use Soliloquy of Spirit on a target, showing your current Soliloquy of Spirit stacking (0 to 3) and current Inner Strength Tier (0 to 3).
+
+Example 1:
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Missing_Inner_Strength.png[/IMG]
+Affodil has three Soliloquy of Spirits and Inner Strength Tier 3. Toermalijn has only two Soliloquy of Spirits and Inner Strength Tier 2. Because her Inner Strength is not Tier 3, the background is red.
+
+Example 2:
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Missing_Soliloquy_of_Spirit.png[/IMG]
+Affodil has three Soliloquy of Spirits and Inner Strength Tier 3. Toermalijn has only two Soliloquy of Spirits but Inner Strength Tier 3. Because she does not have all three Soliloquy of Spirits, the background is yellow.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Melodic Interlude[/COLOR][/SIZE]
+
+You can enable the Melodic Interlude Window in Options. Once enabled, this will pop up a window whenever your Freedom trait triggers the Melodic Interlude Effect. This effect unlocks healing for a friendly target while in Dissonance stance for 10 seconds.
+
+Example:
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Melodic_Interlude.png[/IMG]
+
+[SIZE="4"][COLOR="DeepSkyBlue"]War-Speech[/COLOR][/SIZE]
+
+You can enable the War-Speech display in Options. Once enabled, this will draw an 8-second timer below your ballads for each War-Speech. This effect grants +5% Tactical Damage, and visualizing them helps you to keep three War-Speeches active.
+
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-War-Speech.png[/IMG]
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Support for more than 3 anthems[/COLOR][/SIZE]
+
+The non-fixed themes supports additional anthems. The window will grow in size if the player has more than three active anthem effects.
+
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/MinstrelBuffII_v2.0.1-Window_Standard_Extra_Anthems.png[/IMG]
+
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Installation and Setup[/COLOR][/SIZE]
+
+To install:
+[LIST]
+[*]You can use [URL="https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html"]Plugin Compendium[/URL], or just unzip the archive and drag the "CubePlugins" folder into your "Documents/The Lord of the Rings Online/Plugins" folder. (If you have not previously installed any plugins, you will have to first create the Plugins folder.)
+[/LIST]
+
+To load the plugin, use the game's built-in Plugin Manager. This can be found in the "^" menu, at the bottom of the screen, or by typing [B]/plugin manager[/B] into your chat window.
+
+When the Plugin Manager opens, find MinstrelBuff II in the list on the left side. Verify that the version is 2.0.1. Click "Load" to load the plugin. If you would like the plugin to load automatically each time you login, choose your character's name in the "Automatically Load For" pulldown menu.
+
+When you first load MinstrelBuff II, the plugin windows will be in the upper-left of your screen. You can use your [b]Reposition UI[/b] key (default Ctrl+\) to move these windows.
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/Reposition_UI_Shortcut_Key.png[/IMG]
+[IMG]https://lifebeyondtheshire.com/plugins/MinstrelBuffII/Reposition_UI_MistrelBuffII_Windows.png[/IMG]
+Press your [b]Reposition UI[/b] key again to turn off Reposition mode.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]History[/COLOR][/SIZE]
+[LIST]
+[*]2022-11-20 v2.1.2: Added Priority Anthem feature, fixed some bugs. Release notes are [url=https://forums.lotro.com/forums/showthread.php?696425-Plugin-MinstrelBuff-II&p=8166300#post8166300]here[/url].
+[*]2022-09-28 v2.0.2: Fixed some incorrect paths.
+[*]2022-09-28 v2.0.1: Initial release of MinstrelBuff II. Includes initial support for 2022 Minstrel updates. Release notes are [url=https://forums.lotro.com/forums/showthread.php?696425-Plugin-MinstrelBuff-II&p=8159290#post8159290]here[/url].
+[/LIST]

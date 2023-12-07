@@ -1,0 +1,41 @@
+[SIZE="4"][COLOR="DeepSkyBlue"]Introduction[/COLOR][/SIZE]
+
+[URL="https://www.lotrointerface.com/downloads/info626-MinstrelBuff.html"]MinstrelBuff[/URL] is a great interface for showing a minstrel which ballads and anthems are active, and how long until the anthems expire.
+
+All ballad descriptions include the text "Expires if out of combat for 9 seconds". However, this is an incomplete summary of when ballads do and do not expire. For example: Cry of the Chorus gives you three ballad buffs even if you have been out of combat for 9 seconds.
+
+As of December 2020, the game logic works like this:
+
+[LIST]
+[*]Let's call entering combat after being out of combat for more than nine seconds a "primary combat". When you leave a primary combat, a nine second timer starts counting down. When the timer expires, your ballad buffs also expire. 
+[*]Let's call entering combat while the timer is counting down a "secondary combat". You must stay in a secondary combat for five seconds before it resets the combat timer. That is, if it takes you less than five seconds to enter and leave combat, the original timer continues counting down as if you had not entered combat.
+[*]There's a big exception to this, however: If you are in combat when the current timer expires, it refreshes the timer even if the combat ends in less than five seconds.
+[*]Cry of the Chorus and Major Ballad (Resonance Stance) start the nine second timer if: the player is not already in combat, there is not already a out-of-combat countdown happening, there is not already a Major Ballad countdown happening, and there is not already a Cry of the Chorus countdown happening.
+[*] Entering combat with a Cry of the Chorus countdown or a Major Ballad (Resonance Stance) countdown active is treated like starting a secondary combat, so you must then stay in combat for 5 seconds to refresh the timer.
+[/LIST]
+
+This patch adds two timers:
+[LIST]
+[*] a timer that shows when your ballads buffs will expire. This combat timer starts off white, and when less than five seconds remain it turns yellow. 
+[*] a red timer that shows how long you need to remain in a secondary combat before the combat timer is reset. This happens when the red timer fills up the remaining combat timer completely.
+[/LIST]
+
+This patch does its best to mimic the game logic, however it can occasionally incorrectly predict when the ballads will expire. If you have steps to reproduce an incorrect timer, please comment below and I'll see if I can update the patch to match!
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Installation and Setup[/COLOR][/SIZE]
+
+To install:
+[LIST]
+[*]First, you need to install [URL="https://www.lotrointerface.com/downloads/info626-MinstrelBuff.html"]MinstrelBuff[/URL] v1.9.1. This patch only includes the necessary changes to update that plugin. To install it, you can use [URL="https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html"]Plugin Compendium[/URL], or just unzip the archive and drag the "MinstrelBuffs" folder into your "Documents/The Lord of the Rings Online/Plugins" folder. (If you have not previously installed any plugins, you will have to first create the Plugins folder.)
+[*]Next, download this patch and unzip it. It also contains a "MinstrelBuffs" folder, which you should drag into the same place as before. You will be prompted to overwrite files. Answer yes.
+[/LIST]
+
+To load the plugin, use the game's built-in Plugin Manager. This can be found in the "^" menu, at the bottom of the screen, or by typing [B]/plugin manager[/B] into your chat window.
+
+When the Plugin Manager opens, find MinstrelBuff in the list on the left side. Verify that the version is 1.9.1.2. (If it is 1.9.1, then you have not properly installed the patch. If it is 1.9.1.1, then you have not properly updated the patch.) Click "Load" to load the plugin. If you would like the plugin to load automatically each time you login, choose your character's name in the "Automatically Load For" pulldown menu.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]History[/COLOR][/SIZE]
+[LIST]
+[*]2020-11-01 v1.9.1.1: Initial Release
+[*]2020-12-06 v1.9.1.2: Release notes are [URL="https://www.lotro.com/forums/showthread.php?684273-Patch-MinstrelBuffs-with-Out-Of-Combat-Timer&p=8050502#post8050502"]here[/URL]
+[/LIST]

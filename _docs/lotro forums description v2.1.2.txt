@@ -1,0 +1,21 @@
+The latest release (version 2.1.2) of [url=https://lotrointerface.com/downloads/info1201-MinstrelBuffII.html]MinstrelBuff II[/url] is now available at lotrointerface.com.
+
+This release includes numerous bug fixes and the new Priority Anthem feature.
+
+Features:
+[list]
+[*] Added Priority Anthem feature.
+[*] Added option to show/hide Anthem overlays.
+[/list]
+
+Bugs:
+[list]
+[*] Changing themes now retains the specified scaling.
+[*] Fixed issue with Serious Business not tracking correctly.
+[*] Fixed issue with Major Ballad - Resonance not starting the combat timer.
+[*] Fixed issue with UI not showing correctly after switching themes in combat.
+[*] Fixed issue with anthem overlays hiding incorrectly.
+[/list]
+
+
+More information is available at [URL="https://lotrointerface.com/downloads/info1201-MinstrelBuffII.html"]lotrointerface[/URL].

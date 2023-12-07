@@ -1,0 +1,5 @@
+MinstrelBuffII_v2.0.1-Ballads_and_Anthems.png:
+    MinstrelBuff II in action
+
+MinstrelBuffII_v2.0.1-Fixed_Theme.png:
+    MinstrelBuff II with fixed anthems
